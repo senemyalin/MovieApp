@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
+import androidx.navigation.NavDirections
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.senemyalin.movieapp.R
 import com.senemyalin.movieapp.common.toastMessage
@@ -31,7 +33,20 @@ class MovieDetailsFragment : Fragment(R.layout.fragment_movie_details) {
             btnDelete.setOnClickListener {
                 onClickDelete()
             }
+
+            btnBack.setOnClickListener {
+                onClickBack()
+            }
         }
+    }
+
+    private fun onClickBack() {
+        var action: NavDirections = if (args.isWatchedMovie) {
+            MovieDetailsFragmentDirections.actionMovieDetailsFragmentToWatchedMoviesFragment()
+        } else {
+            MovieDetailsFragmentDirections.actionMovieDetailsFragmentToFutureMoviesFragment()
+        }
+        findNavController().navigate(action)
     }
 
     private fun onClickDelete() {
@@ -41,10 +56,10 @@ class MovieDetailsFragment : Fragment(R.layout.fragment_movie_details) {
             .setPositiveButton("Yes") { _, _ ->
                 if (args.isWatchedMovie) {
 
-                    Database.removeWatchedMovie(args.movie.id)
+                    Database.deleteWatchedMovie(args.movie.id)
                     requireContext().toastMessage("Movie is deleted from Watched Movies!")
                 } else {
-                    Database.removeFutureMovie(args.movie.id)
+                    Database.deleteFutureMovie(args.movie.id)
                     requireContext().toastMessage("Movie is deleted from Future Movies!")
                 }
             }

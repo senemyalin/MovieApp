@@ -52,12 +52,28 @@ object Database {
         }
     }
 
+    fun deleteWatchedMovie(id: Int) {
+        var movie = watchedMovies.find { it.id == id }
+
+        if (movie != null) {
+            watchedMovies.remove(movie)
+        }
+    }
+
     fun removeFutureMovie(id: Int) {
         var movie = futureMovies.find { it.id == id }
 
         if (movie != null) {
             futureMovies.remove(movie)
             watchedMovies.add(movie)
+        }
+    }
+
+    fun deleteFutureMovie(id: Int) {
+        var movie = futureMovies.find { it.id == id }
+
+        if (movie != null) {
+            futureMovies.remove(movie)
         }
     }
 

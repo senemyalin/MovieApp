@@ -17,6 +17,12 @@
         <argument
             android:name="isWatchedMovie"
             app:argType="boolean" />
+        <action
+            android:id="@+id/action_movieDetailsFragment_to_futureMoviesFragment"
+            app:destination="@id/futureMoviesFragment" />
+        <action
+            android:id="@+id/action_movieDetailsFragment_to_watchedMoviesFragment"
+            app:destination="@id/watchedMoviesFragment" />
 
     </fragment>
     <fragment
