@@ -41,7 +41,6 @@ class FutureMoviesFragment : Fragment(R.layout.fragment_movies) {
 
     private fun onCheckboxClick(movie: Movie) {
         Database.removeFutureMovie(movie.id)
-        Database.addWatchedMovies(movie.name, movie.director, movie.imdb, movie.details)
-        movieAdapter.updateList(Database.getFutureMovies())
+        setData(Database.getFutureMovies())
     }
 }
