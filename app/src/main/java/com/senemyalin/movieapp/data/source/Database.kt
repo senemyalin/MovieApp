@@ -12,7 +12,7 @@ object Database {
     fun addWatchedMovies(
         name: String,
         director: String,
-        imdb: Float,
+        imdb: String,
         details: String
     ) {
         watchedMovies.add(
@@ -29,7 +29,7 @@ object Database {
     fun addFutureMovies(
         name: String,
         director: String,
-        imdb: Float,
+        imdb: String,
         details: String
     ) {
         futureMovies.add(

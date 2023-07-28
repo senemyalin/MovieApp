@@ -17,40 +17,40 @@ import com.senemyalin.movieapp.databinding.FragmentMovieDetailsBinding
 class MovieDetailsFragment : Fragment(R.layout.fragment_movie_details) {
 
     private val binding by viewBinding(FragmentMovieDetailsBinding::bind)
-//    private val args: MovieDetailsFragmentArgs by navArgs()
-//
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//
-//        with(binding) {
-//            name.text = args.movie.name
-//            imdb.text = args.movie.imdb.toString()
-//            director.text = args.movie.director
-//            details.text = args.movie.details
-//
-//            btnDelete.setOnClickListener {
-//                onClickDelete()
-//            }
-//        }
-//    }
-//
-//    private fun onClickDelete() {
-//        AlertDialog.Builder(requireContext())
-//            .setTitle("Delete Movie")
-//            .setMessage("Are you sure to delete this Movie?")
-//            .setPositiveButton("Yes") { _, _ ->
-//                if (args.isWatchedMovie) {
-//
-//                    Database.removeWatchedMovie(args.movie.id)
-//                    requireContext().toastMessage("Movie is deleted from Watched Movies!")
-//                } else {
-//                    Database.removeFutureMovie(args.movie.id)
-//                    requireContext().toastMessage("Movie is deleted from Future Movies!")
-//                }
-//            }
-//            .setNegativeButton("No") { _, _ ->
-//                //DO NOTHING
-//            }
-//            .show()
-//    }
+    private val args: MovieDetailsFragmentArgs by navArgs()
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        with(binding) {
+            name.text = args.movie.name
+            imdb.text = args.movie.imdb.toString()
+            director.text = args.movie.director
+            details.text = args.movie.details
+
+            btnDelete.setOnClickListener {
+                onClickDelete()
+            }
+        }
+    }
+
+    private fun onClickDelete() {
+        AlertDialog.Builder(requireContext())
+            .setTitle("Delete Movie")
+            .setMessage("Are you sure to delete this Movie?")
+            .setPositiveButton("Yes") { _, _ ->
+                if (args.isWatchedMovie) {
+
+                    Database.removeWatchedMovie(args.movie.id)
+                    requireContext().toastMessage("Movie is deleted from Watched Movies!")
+                } else {
+                    Database.removeFutureMovie(args.movie.id)
+                    requireContext().toastMessage("Movie is deleted from Future Movies!")
+                }
+            }
+            .setNegativeButton("No") { _, _ ->
+                //DO NOTHING
+            }
+            .show()
+    }
 }

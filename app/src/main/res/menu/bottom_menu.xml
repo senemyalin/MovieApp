@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/watchedMoviesFragment3"
+        android:id="@+id/homeFragment"
+        android:title="Home"/>
+    <item
+        android:id="@+id/watchedMoviesFragment"
         android:title="Watched Movies" />
     <item
-        android:id="@+id/futureMoviesFragment3"
+        android:id="@+id/futureMoviesFragment"
         android:title="Future Movies" />
 </menu>

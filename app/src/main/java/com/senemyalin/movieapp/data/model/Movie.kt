@@ -8,6 +8,6 @@ data class Movie(
     var id: Int,
     val name: String,
     val director: String,
-    val imdb: Float,
+    val imdb: String,
     val details: String
 ) : Parcelable

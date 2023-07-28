@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/futureMoviesFragment3">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/movieDetailsFragment"
@@ -20,7 +20,7 @@
 
     </fragment>
     <fragment
-        android:id="@+id/futureMoviesFragment3"
+        android:id="@+id/futureMoviesFragment"
         android:name="com.senemyalin.movieapp.ui.FutureMoviesFragment"
         android:label="FutureMoviesFragment" >
         <action
@@ -28,11 +28,16 @@
             app:destination="@id/movieDetailsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/watchedMoviesFragment3"
+        android:id="@+id/watchedMoviesFragment"
         android:name="com.senemyalin.movieapp.ui.WatchedMoviesFragment"
         android:label="WatchedMoviesFragment" >
         <action
             android:id="@+id/action_watchedMoviesFragment_to_movieDetailsFragment"
             app:destination="@id/movieDetailsFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.senemyalin.movieapp.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
 </navigation>

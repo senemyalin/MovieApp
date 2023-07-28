@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.HomeFragment">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:gravity="center"
+        android:textColor="@color/dark_pink"
+        android:text="MOVIE APP"
+        android:textSize="36sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:gravity="center"
+        android:text="MOVIE APP"
+        android:textSize="36sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edit_txt_movie_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginHorizontal="36dp"
+        android:hint="Movie Name"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/txt_title"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edit_txt_director"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:layout_marginHorizontal="36dp"
+        android:hint="Director"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/edit_txt_movie_name"/>
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edit_txt_imdb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:layout_marginHorizontal="36dp"
+        android:hint="IMDB"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/edit_txt_director"/>
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edit_txt_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:layout_marginHorizontal="36dp"
+        android:hint="Details"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/edit_txt_imdb"/>
+
+    <com.tistory.zladnrms.roundablelayout.RoundableLayout
+        android:id="@+id/layout_add_movie"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="36dp"
+        android:elevation="16dp"
+        app:cornerAll="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_txt_details"
+        app:strokeLineColor="@color/dark_pink"
+        app:strokeLineWidth="2dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Future Movie"
+            android:textSize="26sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.tistory.zladnrms.roundablelayout.RoundableLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
