@@ -33,8 +33,7 @@ class FutureMoviesFragment : Fragment(R.layout.fragment_movies) {
     private fun onMovieClick(movie: Movie) {
         val action =
             FutureMoviesFragmentDirections.actionFutureMoviesFragmentToMovieDetailsFragment(
-                movie,
-                false
+                movie
             )
         findNavController().navigate(action)
     }

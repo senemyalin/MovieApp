@@ -9,5 +9,6 @@ data class Movie(
     val name: String,
     val director: String,
     val imdb: String,
-    val details: String
+    val details: String,
+    var isWatched: Boolean
 ) : Parcelable

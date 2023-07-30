@@ -36,6 +36,8 @@ class MovieAdapter(
             with(binding) {
                 movieName.text = movie.name
 
+                checkbox.isChecked = movie.isWatched
+
                 root.setOnClickListener {
                     movie.let(onMovieClick)
                 }

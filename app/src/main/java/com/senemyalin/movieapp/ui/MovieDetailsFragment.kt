@@ -41,7 +41,7 @@ class MovieDetailsFragment : Fragment(R.layout.fragment_movie_details) {
     }
 
     private fun onClickBack() {
-        var action: NavDirections = if (args.isWatchedMovie) {
+        var action: NavDirections = if (args.movie.isWatched) {
             MovieDetailsFragmentDirections.actionMovieDetailsFragmentToWatchedMoviesFragment()
         } else {
             MovieDetailsFragmentDirections.actionMovieDetailsFragmentToFutureMoviesFragment()
@@ -54,7 +54,7 @@ class MovieDetailsFragment : Fragment(R.layout.fragment_movie_details) {
             .setTitle("Delete Movie")
             .setMessage("Are you sure to delete this Movie?")
             .setPositiveButton("Yes") { _, _ ->
-                if (args.isWatchedMovie) {
+                if (args.movie.isWatched) {
 
                     Database.deleteWatchedMovie(args.movie.id)
                     requireContext().toastMessage("Movie is deleted from Watched Movies!")

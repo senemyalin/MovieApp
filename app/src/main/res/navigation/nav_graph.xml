@@ -14,9 +14,6 @@
         <argument
             android:name="movie"
             app:argType="com.senemyalin.movieapp.data.model.Movie" />
-        <argument
-            android:name="isWatchedMovie"
-            app:argType="boolean" />
         <action
             android:id="@+id/action_movieDetailsFragment_to_futureMoviesFragment"
             app:destination="@id/futureMoviesFragment" />

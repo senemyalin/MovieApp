@@ -21,7 +21,8 @@ object Database {
                 name,
                 director,
                 imdb,
-                details
+                details,
+                true
             )
         )
     }
@@ -38,15 +39,16 @@ object Database {
                 name,
                 director,
                 imdb,
-                details
+                details,
+                false
             )
         )
     }
 
     fun removeWatchedMovie(id: Int) {
         var movie = watchedMovies.find { it.id == id }
-
         if (movie != null) {
+            movie.isWatched = false
             watchedMovies.remove(movie)
             futureMovies.add(movie)
         }
@@ -64,6 +66,7 @@ object Database {
         var movie = futureMovies.find { it.id == id }
 
         if (movie != null) {
+            movie.isWatched = true
             futureMovies.remove(movie)
             watchedMovies.add(movie)
         }
