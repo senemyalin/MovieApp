@@ -63,9 +63,7 @@ class MovieDetailsFragment : Fragment(R.layout.fragment_movie_details) {
                     requireContext().toastMessage("Movie is deleted from Future Movies!")
                 }
             }
-            .setNegativeButton("No") { _, _ ->
-                //DO NOTHING
-            }
+            .setNegativeButton("No", null)
             .show()
     }
 }
